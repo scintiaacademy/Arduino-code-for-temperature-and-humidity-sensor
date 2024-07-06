@@ -1,7 +1,6 @@
 # Arduino-temp-humidity-sensor
 "Arduino code to read and display humidity and temperature data using DHT11/DHT22 sensors."
 
-
 #include <DHT.h>
 
 #define DHTPIN A0     // Pin where the DHT11 is connected
@@ -28,6 +27,7 @@ void loop()
   float temperatureF = dht.readTemperature(true);  // Read temperature in Fahrenheit from sensor
   
   // Check if any reads failed and exit early (to try again).
+  
   if (isnan(humidity) || isnan(temperatureC) || isnan(temperatureF))
   {
     Serial.println("Failed to read from DHT sensor!");
@@ -52,4 +52,5 @@ void loop()
   Serial.print(temperatureF);
   
   Serial.println("°F");
+  
 }
